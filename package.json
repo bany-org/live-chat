@@ -16,7 +16,9 @@
         "socket.io": "^2.3.0"
     },
     "scripts": {
-        "start": "node index.js",
+        "start": "node server.js",
+        "dev-start": "react-scripts start",
+        "dev-build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },

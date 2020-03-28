@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { CTX } from './Store';
 
@@ -16,26 +16,38 @@ const useStyles = makeStyles(theme => ({
     root: {
         padding: theme.spacing(3, 2),
         margin: '50px',
+
+        [theme.breakpoints.down('sm')]: {
+            margin: '0px',
+            padding: '10px',
+            backgroundColor: 'lightGray',
+        },
     },
     flex: {
         display: 'flex',
         alignItems: 'center',
+        padding: '5px',
     },
     topicsWindow: {
         width: '30%',
-        height: '300px',
+        height: '400px',
         borderRight: '1px solid gray',
     },
     chatWindow: {
         width: '70%',
-        height: '300px',
+        height: '400px',
         padding: '20px',
+        overflow: 'auto',
     },
     chatBox: {
+        backgroundColor: '#dcedc8',
         width: '85%',
     },
     button: {
         width: '15%',
+    },
+    listItem: {
+        padding: '5px',
     },
 }));
 
