@@ -2,7 +2,7 @@ var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
-const port = process.env.PORT || 9290;
+const port = process.env.PORT || 3000;
 
 app.get('/index.html', function(req, res) {
     console.log('idzie request + port', port);
@@ -22,14 +22,14 @@ app.get('/static/js/2.d833781d.chunk.js', function(req, res) {
     res.sendFile(__dirname + '/build/static/js/2.d833781d.chunk.js');
 });
 
-app.get('/static/js/main.1b445764.chunk.js', function(req, res) {
+app.get('/static/js/main.71d24397.chunk.js', function(req, res) {
     console.log('idzie request');
 
-    res.sendFile(__dirname + '/build/static/js/main.1b445764.chunk.js');
+    res.sendFile(__dirname + '/build/static/js/main.71d24397.chunk.js');
 });
 
 // WARNING: app.listen(80) will NOT work here!
-server.listen(9290);
+server.listen(port);
 
 io.on('connection', function(socket) {
     console.log('a user connected');
