@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useCallback, useEffect } from 'react';
 import io from 'socket.io-client';
 
 export const CTX = React.createContext();
@@ -6,26 +6,14 @@ export const CTX = React.createContext();
 const initialState = {
     general: [
         {
-            from: 'Kuba',
-            msg: 'OMG WTF',
-        },
-        {
-            from: 'Marta',
-            msg: 'Cześć Kuba',
-        },
-        {
-            from: 'Marta',
-            msg: 'Cześć Kuba',
+            from: 'BOT',
+            msg: 'Hello there',
         },
     ],
     random: [
         {
-            from: 'Marta',
-            msg: 'halo halo',
-        },
-        {
-            from: 'Marta',
-            msg: 'haJest tu ktoś?',
+            from: 'BOT',
+            msg: 'Hello there',
         },
     ],
 };
@@ -67,21 +55,30 @@ function sendChatAction(value) {
 }
 
 function Store(props) {
-    console.log('store');
-
-    if (!socket) {
-        socket = io(':3001');
-
-        socket.on('chat message', function(msg) {
-            console.log('on chat message', msg);
-
-            dispatch({ type: 'RECIVE_MESSAGE', payload: msg });
-        });
-    }
-
     const [state, dispatch] = React.useReducer(reducer, initialState);
+    const user = useMemo(() => 'User' + Math.random(100).toFixed(2), []);
 
-    const user = 'User' + Math.random(100).toFixed(2);
+    const onChatMessage = useCallback(
+        msg => dispatch({ type: 'RECIVE_MESSAGE', payload: msg }),
+        [dispatch]
+    );
+
+    useEffect(() => {
+        socket = io(':3001');
+        socket.on('chat message', onChatMessage);
+    }, []);
+
+    // if (!socket) {
+    //     socket = io(':3001');
+
+    //     socket.on('chat message', function(msg) {
+    //         console.log('on chat message', msg);
+
+    //         dispatch({ type: 'RECIVE_MESSAGE', payload: msg });
+    //     });
+    // }
+
+    // const user = 'User' + Math.random(100).toFixed(2);
 
     return (
         <CTX.Provider value={{ state, sendChatAction, user }}>
