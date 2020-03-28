@@ -64,7 +64,8 @@ function Store(props) {
     );
 
     useEffect(() => {
-        socket = io(':3001');
+        const port = process.env.PORT || ':3001';
+        socket = io(port);
         socket.on('chat message', onChatMessage);
     }, []);
 
