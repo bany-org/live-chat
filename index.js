@@ -22,14 +22,14 @@ app.get('/static/js/2.d833781d.chunk.js', function(req, res) {
     res.sendFile(__dirname + '/build/static/js/2.d833781d.chunk.js');
 });
 
-app.get('/static/js/main.c32c3ad7.chunk.js', function(req, res) {
+app.get('/static/js/main.1b445764.chunk.js', function(req, res) {
     console.log('idzie request');
 
-    res.sendFile(__dirname + '/build/static/js/main.c32c3ad7.chunk.js');
+    res.sendFile(__dirname + '/build/static/js/main.1b445764.chunk.js');
 });
 
 // WARNING: app.listen(80) will NOT work here!
-server.listen(port);
+server.listen(9290);
 
 io.on('connection', function(socket) {
     console.log('a user connected');

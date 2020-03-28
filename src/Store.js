@@ -64,7 +64,7 @@ function Store(props) {
     );
 
     useEffect(() => {
-        const port = process.env.PORT || ':9290';
+        const port = process.env.PORT || '9290';
         console.log('port', port);
 
         socket = io(port);
