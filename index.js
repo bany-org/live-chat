@@ -5,12 +5,12 @@ var io = require('socket.io')(server);
 const port = process.env.PORT || 3001;
 
 app.get('/index.html', function(req, res) {
-    console.log('idzie request');
+    console.log('idzie request + port', port);
 
     res.sendFile(__dirname + '/build/index.html');
 });
 
-app.get('/css/main.8ab6f918.chunk.css', function(req, res) {
+app.get('/static/css/main.8ab6f918.chunk.css', function(req, res) {
     console.log('idzie request');
 
     res.sendFile(__dirname + '/build/static/css/main.8ab6f918.chunk.css');
@@ -22,10 +22,10 @@ app.get('/static/js/2.d833781d.chunk.js', function(req, res) {
     res.sendFile(__dirname + '/build/static/js/2.d833781d.chunk.js');
 });
 
-app.get('/static/js/main.bdc3277f.chunk.js', function(req, res) {
+app.get('/static/js/main.c4a0b268.chunk.js', function(req, res) {
     console.log('idzie request');
 
-    res.sendFile(__dirname + '/build/static/js/main.bdc3277f.chunk.js');
+    res.sendFile(__dirname + '/build/static/js/main.c4a0b268.chunk.js');
 });
 
 // WARNING: app.listen(80) will NOT work here!

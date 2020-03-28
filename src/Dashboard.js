@@ -45,8 +45,6 @@ const Dashboard = () => {
     // CTX store
     const { state, sendChatAction, user } = React.useContext(CTX);
 
-    console.log('dash', state);
-
     const topics = Object.keys(state);
 
     // local state
