@@ -4,23 +4,45 @@ const path = require('path');
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var cors = require('cors');
 
 const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('/ping', function(req, res) {
+const allowedOrigins = [
+    'http://localhost:3000',
+    'https://nasza-kuchnia.web.app',
+];
+app.use(
+    cors({
+        origin: function (origin, callback) {
+            // allow requests with no origin
+            // (like mobile apps or curl requests)
+            if (!origin) return callback(null, true);
+            if (allowedOrigins.indexOf(origin) === -1) {
+                var msg =
+                    'The CORS policy for this site does not ' +
+                    'allow access from the specified Origin.';
+                return callback(new Error(msg), false);
+            }
+            return callback(null, true);
+        },
+    })
+);
+
+app.get('/ping', function (req, res) {
     return res.send('pong');
 });
 
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+app.get('/recipe/:tagId', function (req, res) {
+    res.send('tagId is set to ' + req.params.tagId);
 });
 
 server.listen(port);
 
-io.on('connection', function(socket) {
-    socket.on('chat message', function(msg) {
+io.on('connection', function (socket) {
+    socket.on('chat message', function (msg) {
         io.emit('chat message', msg);
     });
 });
