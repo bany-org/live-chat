@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const recipeHandlers = require('./src/server/recipeHandlers');
 
 var app = require('express')();
 var server = require('http').Server(app);
@@ -36,7 +37,11 @@ app.get('/ping', function (req, res) {
 });
 
 app.get('/recipe/:tagId', function (req, res) {
-    res.send('tagId is set to ' + req.params.tagId);
+    const recipe = recipeHandlers.lookForRecipe(req.param.tagId);
+
+    res.json(recipe);
+    // next();
+    // res.send('tagId is set to ' + req.params.tagId);
 });
 
 server.listen(port);
