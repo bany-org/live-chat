@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, 'build')));
 
 const allowedOrigins = [
-    'http://localhost:3000',
+    'http://localhost:3001',
     'https://nasza-kuchnia.web.app',
 ];
 app.use(
@@ -36,12 +36,16 @@ app.get('/ping', function (req, res) {
     return res.send('pong');
 });
 
-app.get('/recipe/:tagId', function (req, res) {
-    const recipe = recipeHandlers.lookForRecipe(req.param.tagId);
+app.get('/recipe/:id', function (req, res) {
+    const recipe = recipeHandlers.lookForRecipe(req.params.id);
 
     res.json(recipe);
-    // next();
-    // res.send('tagId is set to ' + req.params.tagId);
+});
+
+app.get('/recipes', function (req, res) {
+    const recipes = recipeHandlers.getAllRecipes();
+
+    res.json(recipes);
 });
 
 server.listen(port);
