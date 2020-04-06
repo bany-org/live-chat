@@ -14,6 +14,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 const allowedOrigins = [
     'http://localhost:3001',
     'https://nasza-kuchnia.web.app',
+    'https://nasza-kuchnia.firebaseapp.com',
 ];
 app.use(
     cors({
