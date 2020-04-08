@@ -355,7 +355,7 @@ module.exports.recipes = [
     {
         id: 8,
         generalData: {
-            author: 'Domikina Fityka',
+            author: 'Domikina F-a',
             name: 'Babeczki wielkanocne',
             time: '45 min',
             people: '6-12',
@@ -427,6 +427,133 @@ module.exports.recipes = [
                 5: 'Do foremek silikonowych lub foremek na muffinki wyłożonych papilotkami wlewamy ciasto do 3/4 wysokości.',
                 6: 'Pieczemy w rozgrzanym piekarniku do 180 C przez około 25-30 min. do zarumienienia i suchego patyczka. Studzimy i delikatnie wyjmujemy z foremek.',
                 7: 'Cukier puder przesiewamy i dodajemy sok z cytryny oraz wodę. Lukier powinien być gęsty, ale płynny. Polewamy babeczki i dekorujemy posypkami.',
+            },
+        },
+    },
+    {
+        id: 9,
+        generalData: {
+            author: 'Sandra K-n',
+            name: 'Żurek wegetariański',
+            time: '45 min',
+            people: '4',
+            type: 'soup',
+        },
+        recipeMain: {
+            ingredients: [
+                {
+                    name: 'trzy duże cebule',
+                    // quantity: '25',
+                    // unit: 'g',
+                },
+                {
+                    name: 'olej',
+                    // quantity: '150',
+                    // unit: 'ml',
+                },
+                {
+                    name: 'pół korzenia selera',
+                    // quantity: '5',
+                    // unit: 'g',
+                },
+                {
+                    name: '200 gramów boczniaków',
+                    // quantity: '250',
+                    // unit: 'g',
+                },
+                {
+                    name: 'trzy ząbki czosnku',
+                    // quantity: '5',
+                    // unit: 'g',
+                },
+                {
+                    name: 'około 300 ml zakwasu na żurek',
+                    // quantity: '5',
+                    // unit: 'ml',
+                },
+                {
+                    name: '100 ml śmietany 18 proc.',
+                    // quantity: '5',
+                    // unit: 'ml',
+                },
+                {
+                    name: 'łyżeczka tartego chrzanu',
+                    // quantity: '5',
+                    // unit: 'ml',
+                },
+                {
+                    name: 'majeranek, sól, pieprz',
+                    // quantity: '5',
+                    // unit: 'ml',
+                },
+            ],
+            preparation: {
+                1: 'Zrób tak: żurek gotujmy tylko z prostych składników, musimy więc wyciągnąć z nich maksimum smaku. Trzeba je skarmelizować – to nasz sekret żurku wegetariańskiego. Składniki będziemy smażyć i dusić jednocześnie przez dłuższy czas.',
+                2: 'Cebulę posiekaj, w garnku na zupę rozgrzej olej, wrzuć cebulę, wymieszaj, przykryj i trzymaj na minimalnym ogniu.',
+                3: 'W tym czasie pokrój selera w kostkę, a boczniaki w paski, dorzuć do cebuli, wymieszaj i kontynuuj karmelizowanie.',
+                4: 'Czosnek posiekaj i rozetrzyj nożem z odrobiną soli, również dorzuć do garnka, wymieszaj przykryj. Karmelizowanie powinno potrwać około 15-20 minut. Na koniec cebula powinna być lekko zrumieniona i zupełnie miękka.',
+                5: 'Wedy do garnka wlej wodę i zagotuj, dodaj zakwas i chrzan, wymieszaj, śmietanę rozrób z odrobią zupy, powoli wlej do garnka, cały czas mieszając. Dopraw solą, pieprzem i dużą ilością majeranku.',
+                6: 'Po zagotowaniu trzymaj na ogniu jeszcze kilka minut. Żurek jest najlepszy, gdy chwilę postoi, a wszystkie smaki się przegryzą. Świetnie pasują do niego zrumienione ziemniaki – pokrój je w grube plastry i ugotuj w osolonej wodzie, aby były lekko twardawe, skrop olejem, następnie zrumień na patelni z obu stron. Do żurku dodaliśmy też ugotowane jajka.',
+            },
+        },
+    },
+    {
+        id: 10,
+        generalData: {
+            author: 'Sandra K-n',
+            name: 'Jajka z pieczrkami',
+            time: '45',
+            people: '6',
+            type: 'meal',
+        },
+        recipeMain: {
+            ingredients: [
+                {
+                    name: '10 jajek',
+                    // quantity: '25',
+                    // unit: 'g',
+                },
+                {
+                    name: '300 g pieczarek',
+                    // quantity: '150',
+                    // unit: 'ml',
+                },
+                {
+                    name: '2 duże cebule',
+                    // quantity: '5',
+                    // unit: 'g',
+                },
+                {
+                    name: 'pół szklanki posiekanej pietruszki',
+                    // quantity: '250',
+                    // unit: 'g',
+                },
+                {
+                    name: '50 g masła lub margaryny',
+                    // quantity: '5',
+                    // unit: 'g',
+                },
+                {
+                    name: 'sól i mielony pieprz do smaku',
+                    // quantity: '5',
+                    // unit: 'ml',
+                },
+                {
+                    name: 'bułka tarta zwykła lub bezglutenowa',
+                    // quantity: '5',
+                    // unit: 'ml',
+                },
+                {
+                    name: 'olej i masło do smażenia',
+                    // quantity: '5',
+                    // unit: 'ml',
+                },
+            ],
+            preparation: {
+                1: 'Jajka gotuję na twardo, studzę, przecinam ostrym nożem na pól i łyżeczką do herbaty wyjmuję całą zawartość ze skorupki. Jajko siekam w drobną kostkę lub rozdrabniam widelcem w misce, zależnie od fantazji.',
+                2: 'Na łyżce masła duszę posiekane pieczarki z cebulką do czasu, aż odparuje z nich nadmiar wody, a cebula zacznie się przyrumieniać.',
+                3: 'W misce mieszam pieczarki, cebulę, rozdrobnione jajka, miękkie masło, sól i pieprz. Masę przekładam do skorupek po jajkach. Obtaczam w bułce tartej i smażę na patelni na małym ogniu nadzieniem do dołu, tak aby jajka faszerowane pieczarkami zarumieniły się równomiernie.',
+                4: 'Jajka z pieczarkami podaję zawsze na ciepło!',
             },
         },
     },
